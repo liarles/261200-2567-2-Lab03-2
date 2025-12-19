@@ -7,7 +7,7 @@ public class Patient {
     private String bloodGroup;
     private int phoneNumber;
 
-    public int check_year(int birth){
+    public int birth(int birth){
         if(birth < 0){
             birth = -1*birth;
             System.out.println("Invalid birth year, now " + name +" brith year will be" + birth);
@@ -67,8 +67,15 @@ public class Patient {
     public double getWeight(){
         return this.weight;
     }
-    public String getBloodGroup(){
-        return this.bloodGroup;
+    public String bloodGroup(String bloodGroup){
+        if (bloodGroup == "A" || bloodGroup =="B" || bloodGroup == "AB" || bloodGroup == "o") {
+            return this.bloodGroup;
+        }
+        else{
+            System.out.println("Invalid blood group, now " + name +" blood group will be A");
+
+            return "A";
+        }
     }
     public int getPhoneNumber(){
         return this.phoneNumber;
@@ -84,7 +91,12 @@ public class Patient {
 
     public int getAge(int currentYear){
          int age;
-         age = currentYear - birth;
+         age = currentYear - birth(birth);
+         if(age<=0 || age > currentYear){
+             age = 24;
+             System.out.println("Invalid birth year, now " + name +" brith year will be 2000");
+
+         }
          return age;
     }
 
@@ -96,7 +108,7 @@ public class Patient {
 
         System.out.println("Patient Weight (kg): " + weight(weight));
 
-        System.out.println("Patient Blood Group: " + bloodGroup);
+        System.out.println("Patient Blood Group: " + bloodGroup(bloodGroup));
 
         System.out.println("Patient Phone Number: " + phoneNumber);
 
