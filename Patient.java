@@ -68,7 +68,7 @@ public class Patient {
         return this.weight;
     }
     public String bloodGroup(String bloodGroup){
-        if (bloodGroup == "A" || bloodGroup =="B" || bloodGroup == "AB" || bloodGroup == "o") {
+        if (bloodGroup == "A" || bloodGroup =="B" || bloodGroup == "AB" || bloodGroup == "O") {
             return this.bloodGroup;
         }
         else{
@@ -119,3 +119,4 @@ public class Patient {
     }
 
 }
+
