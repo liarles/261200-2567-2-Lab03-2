@@ -82,7 +82,8 @@ public class Patient {
     }
     public double getBMI(double height, double weight){
         double BMI;
-        BMI = (weight*0.01)/(height*height);
+        double trueheight = height*0.01;
+        BMI = (weight)/(trueheight*trueheight);
         if(BMI <= 0){
             BMI = 0;
         }
